@@ -1,0 +1,131 @@
+.count {
+    font-weight: 500;
+    border-radius: 10px;
+    background-color: #8bebb36e;
+    width: 200px;
+    margin: 25px 0 0 0;
+    padding: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-shadow: 1px 1px 10px #1d50329a;
+}
+
+.content {
+    display: none;
+}
+
+.main-myButton,
+.main-myButtonn {
+    border-radius: 10px;
+    width: 200px;
+    margin: 25px 0 0 0;
+    font-weight: 500;
+    color: white;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px);
+    background: rgb(64, 199, 129);
+    box-shadow: 0px 5px 10px 0px rgba(31, 138, 37, 0.5);
+    transition: 0.2s;
+}
+
+
+.main-myButtonn:hover,
+.main-myButton:hover {
+    background: rgb(53, 163, 106);
+}
+
+
+.main-myButton:active,
+.main-myButtonn:active {
+    color: rgb(53, 163, 106);
+    background: rgb(207, 247, 226);
+    box-shadow: 5px rgb(69, 226, 148);
+}
+
+.data p {
+    color: #135316d5;
+    font-size: 24px;
+    font-family: 'Signika', sans-serif;
+    margin: 0px;
+}
+
+.value {
+    font-style: italic;
+}
+
+.answer {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 0px 0px 5px #93d3a3, 0px 0px 10px #93d3a3, 0px 0px 10px #93d3a3,
+        0px 0px 20px #93d3a3, 1px 0px 1px #000000, -1px 0px 1px #000000, 0px -1px 1px #000000, 0px 1px 1px #000000;
+}
+
+.titan {
+    font-weight: 500;
+    background-color: #8bebb34b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-shadow: 1px 1px 10px #1d50329a;
+    width: 650px;
+    border-radius: 10px;
+    padding: 15px 0 0 105px;
+    margin: 1% 27%;
+}
+
+.bods {
+    background: url('background.jpg') 50% 50% no-repeat fixed;
+    background-position: center;
+    background-size: cover;
+    min-height: 1060px
+}
+
+.title {
+
+    margin: 0 0 0 32%;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fdfefd;
+    text-shadow: 0px 0px 5px #93d3a3, 0px 0px 10px #93d3a3, 0px 0px 10px #93d3a3,
+        0px 0px 20px #93d3a3;
+}
+
+.content {
+    border-radius: 20px;
+    width: 600px;
+    max-height: 320px;
+    margin: 5% 0 0 -15%;
+    font-weight: 500;
+    background-color: #8bebb3c9;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    box-shadow: 1px 1px 10px #1d50329a;
+    padding: 15px 15px 15px 15px;
+    overflow: hidden;
+}
+
+.Bigcontent {
+    margin: -5% 0 0 0;
+    overflow: auto;
+    max-height: 330px;
+    width: 585px;
+}
+
+
+.Bigcontent::-webkit-scrollbar {
+    width: 7px;
+    /* ширина scrollbar */
+}
+
+.Bigcontent::-webkit-scrollbar-track {
+    background: #7ddca2;
+    /* цвет дорожки */
+}
+
+.Bigcontent::-webkit-scrollbar-thumb {
+    background-color: #396;
+    /* цвет плашки */
+    /* закругления плашки */
+}
