@@ -9,6 +9,7 @@ $this->beginPage(); ?>
 <html lang="<?= Yii::$app->language ?>">
 
 <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/base.min.css" />
     <link rel="stylesheet" href="../web/css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,18 +22,15 @@ $this->beginPage(); ?>
 
 <br>
 
-<body class="bods"">
+<body>
 
-    <div class=" wrap">
-    <div class="container">
-        <div class="title" href="/web/post/test">Калькулятор стоимости поставки сырья</div>
-        <?= $content ?>
-    </div>
-    </div>
+    <div class="title">Калькулятор расчета стоимости поставки сырья</div>
+    <?= $content ?>
 
 
     <?php $this->endBody() ?>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js"></script>
 
 </html>
 <?php $this->endPage() ?>

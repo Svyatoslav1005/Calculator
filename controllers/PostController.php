@@ -6,6 +6,9 @@ use app\models\Soya;
 use app\models\Raw;
 use app\models\Hmykh;
 use app\models\Shrot;
+use app\components\SoyaWidget;
+use app\components\HmykhWidget;
+use app\components\ShrotWidget;
 
 class PostController extends AppController
 {
@@ -29,14 +32,84 @@ class PostController extends AppController
 
         $dataShrot = Shrot::find()->all();
 
-        $catsMonth = Soya::find()->where(['like', 'weight', '25'])->all();
+        $month = Soya::find()->where(['like', 'weight', '25'])->all();
 
-        $catsWeight = Soya::find()->where(['like', 'month', 'январь'])->all();
+        $weight = Soya::find()->where(['like', 'month', 'январь'])->all();
 
-        $query2 = 'select * from raw';
+        $query = 'select * from raw';
 
-        $type = Raw::findBySql($query2)->all();
+        $type = Raw::findBySql($query)->all();
 
-        return $this->render('test', compact('type', 'catsMonth', 'catsWeight', 'dataSoya', 'dataHmykh', 'dataShrot'));
+        $postvalue = !empty($_POST['value']) ? $_POST['value'] : '';
+        $postweight = !empty($_POST['weight']) ? $_POST['weight'] : '';
+        $postmonth = !empty($_POST['month']) ? $_POST['month'] : '';
+
+        $answer = '';
+        switch ($postvalue) {
+            case 'соя':
+                foreach ($dataSoya as $dsoya) {
+                    if ($dsoya['month'] === $postmonth and $dsoya['weight'] === $postweight) {
+                        $answer = $dsoya['value'];
+                    }
+                }
+            default:
+                switch ($postvalue) {
+                    case 'жмых':
+                        foreach ($dataHmykh as $dh) {
+                            if ($dh['month'] === $postmonth and $dh['weight'] === $postweight) {
+                                $answer = $dh['value'];
+                            }
+                        }
+                    default:
+                        switch ($postvalue) {
+                            case 'шрот':
+                                foreach ($dataShrot as $dshrot) {
+                                    if ($dshrot['month'] === $postmonth and $dshrot['weight'] === $postweight) {
+                                        $answer = $dshrot['value'];
+                                    }
+                                }
+                        }
+                }
+        }
+
+        $values = 1;
+        switch ($postvalue) {
+            case 'жмых':
+            case 'шрот':
+            case 'соя':
+                $values = 1;
+            default:
+                $values = 0;
+        }
+
+        $content = '';
+        switch ($postvalue) {
+            case 'жмых':
+                $content = HmykhWidget::widget();
+                break;
+            case 'шрот':
+                $content = ShrotWidget::widget();
+                break;
+            case 'соя':
+                $content = SoyaWidget::widget();
+                break;
+            default:
+                $content =  '<div class="nocontent">Ошибка! Выберите данные.</div>';
+        }
+
+        return $this->render('test', compact(
+            'type',
+            'month',
+            'weight',
+            'dataSoya',
+            'dataHmykh',
+            'dataShrot',
+            'postmonth',
+            'postweight',
+            'postvalue',
+            'answer',
+            'values',
+            'content'
+        ));
     }
 }
