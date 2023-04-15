@@ -11,37 +11,55 @@ use yii\widgets\ActiveForm;
 <?php $form = ActiveForm::begin() ?>
 <div class="titan">
 
+
     <form action="" method="post">
 
         <div id="start" class="start"></div>
 
-        <div class="block1">
+        <div class="block1" id="block1">
 
-            <div>
-                <select class="choices" required name="month" id="inputState">
-                    <option class="open" value="" hidden selected>Месяц</option>
-                    <?php foreach ($month as $typeId) : ?>
-                        <option><?php echo $typeId['month'] ?></option><br>
+            <div class="suka">
+                <select onclick="this.className = (this.className == 'choices' ? 'secondchoices' : 'choices')" class="choices" name="month" id="inputState">
+
+                    <option class="open" value="" <?php if (!empty($_POST['month']) and $_POST['month'] === "") {
+                                                        echo 'selected';
+                                                    } ?>hidden>Месяц</option>
+                    <?php foreach ($month as $monthId => $monthValue) : ?>
+                        <option value="<?= $monthId ?>" <?php if (!empty($_POST['month']) and $_POST['month'] === $monthId) {
+                                                            echo 'selected';
+                                                        } ?>>
+                            <?= $monthValue ?>
+                        </option>
                     <?php endforeach; ?>
                 </select>
             </div>
 
 
             <div>
-                <select class="choices" required name="value" id="inputState">
-                    <option class="open" value="" hidden disabled selected>Тип сырья</option>
-                    <?php foreach ($type as $typeId) : ?>
-                        <option><?php echo $typeId['title'] ?></option><br>
+                <select onclick="this.className = (this.className == 'choices' ? 'secondchoices' : 'choices')" class="choices" required name="type" id="inputState">
+
+                    <option class="open" value="" <?php if (!empty($_POST['type']) and $_POST['type'] === "") {
+                                                        echo 'selected';
+                                                    } ?> hidden>Тип сырья</option>
+                    <?php foreach ($type as $typeId => $typeValue) : ?>
+                        <option value="<?= $typeId ?>" <?php if (!empty($_POST['type']) and $_POST['type'] === $typeId) {
+                                                            echo 'selected';
+                                                        } ?>> <?= $typeValue ?> </option>
                     <?php endforeach; ?>
                 </select>
             </div>
 
 
             <div>
-                <select class="choices" required name="weight" id="inputState">
-                    <option class="open" value="" hidden disabled selected>Тоннаж</option>
-                    <?php foreach ($weight as $typeId) : ?>
-                        <option><?php echo $typeId['weight'] ?></option><br>
+                <select onclick="this.className = (this.className == 'choices' ? 'secondchoices' : 'choices')" class="choices" required name="weight" id="inputState">
+
+                    <option class="open" value="" <?php if (!empty($_POST['weight']) and $_POST['weight'] === "") {
+                                                        echo 'selected';
+                                                    } ?> hidden>Тоннаж</option>
+                    <?php foreach ($weight as $weightId => $weightValue) : ?>
+                        <option value="<?= $weightId ?>" <?php if (!empty($_POST['weight']) and $_POST['weight'] === $weightId) {
+                                                                echo 'selected';
+                                                            } ?>> <?= $weightValue ?> </option>
                     <?php endforeach; ?>
                 </select>
             </div>
@@ -52,18 +70,21 @@ use yii\widgets\ActiveForm;
     <div class="block2">
         <div class="count">
             <p>Данные:</p>
-            <span style="color: #1e083bbe;">Месяц:</span> <span class="value"><?php echo  $postmonth ?></span><br>
-            <span style="color: #1e083bbe;">Тип сырья:</span> <span class="value"><?php echo  $postvalue ?></span><br>
-            <span style="color: #1e083bbe;">Тоннаж:</span> <span class="value"><?php echo  $postweight ?></span><br>
+            <div><span style="color: #1e083bbe;">Месяц:</span> <span class="value"><?= $datamonth
+                                                                                    ?></span></div>
+            <div><span style="color: #1e083bbe;">Тип сырья:</span> <span class="value"><?= $datatype
+                                                                                        ?></span></div>
+            <div><span style="color: #1e083bbe;">Тоннаж:</span> <span class="value"><?= $dataweigh
+                                                                                    ?></span></div>
             <p style="padding: 10px 0 0 0; display: inline">Стоимость:</p>
-            <span class="answer"><?php echo  $answer ?></span>
+            <span class="answer"><?= $answer ?></span>
         </div>
-        <button onclick="scrollAction()" type="button" class="myButton">Таблица расчета</button>
+        <button type="button" class="myButton">Таблица расчета</button>
     </div>
     <div id="content" class="content">
         <div class="Bigcontent">
             <br>
-            <?php echo $content ?>
+            <?= $content ?>
         </div>
 
     </div>

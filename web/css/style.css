@@ -10,7 +10,7 @@
 
 .myButton,
 .myButtonn {
-    background: #7e4a88;
+    background: #4d07ce8a;
     color: #ffeff7;
     font-weight: bolder;
     margin: 20px 0 0 0;
@@ -18,25 +18,29 @@
     height: 40px;
     border-radius: 15px;
     border: 1px;
-    box-shadow: 0px 2px 5px 1px #513457;
+    box-shadow: 0 2px 10px #513457;
 }
 
 
 .myButtonn:hover,
 .myButton:hover {
-    background: #f1cade;
-    color: #513457;
+
+    background: #5a22d1de;
+    color: #ffeff7;
     transition: 0.4s;
-    box-shadow: 0px 5px 15px 2px #513457;
+    box-shadow: 0 15px 20px #5a22d1de;
+    transform: translateY(-5px);
+
 }
 
 
 .myButton:active,
 .myButtonn:active {
-    background: #7e4a88;
+    background: #4d07ce8a;
     color: #ffeff7;
     transition: 0.2s;
-    box-shadow: 0px 2px 5px 1px #513457;
+    box-shadow: 0 8px 15px #513457;
+    transform: translateY(0px);
 }
 
 .count p {
@@ -48,6 +52,23 @@
 
 .value {
     color: #513457;
+}
+
+.titan {
+    color: #1e293b;
+    font-weight: 500;
+    background-color: #f5dcfc6c;
+    box-shadow: 4px 4px 30px #513457, -3px -3px 30px #513457;
+    width: 650px;
+    border-radius: 10px;
+    padding: 0px 70px 35px 70px;
+    margin: 50px auto 0;
+}
+
+body {
+    zoom: 1.1;
+    background: url('backgroung.jpg') no-repeat fixed;
+    background-size: 100%;
 }
 
 .answer {
@@ -62,41 +83,24 @@
 }
 
 .answer:hover {
-    color: rgb(126, 46, 126);
+    color: #7c4bd5;
+    ;
     text-shadow: 1px 1px 0 #ffffff,
         1px -1px 0 #ffffff,
         -1px 1px 0 #ffffff,
         -1px -1px 0 #ffffff;
 }
 
-.titan {
-    font-weight: 500;
-    background-color: #ffd9e8c2;
-    box-shadow: 4px 4px 30px #513457, -3px -3px 30px #513457;
-    width: 650px;
-    border-radius: 10px;
-    padding: 0px 70px 35px 70px;
-    margin: 50px auto 0;
-}
-
-body {
-    zoom: 1.02;
-    background: url('background2.jpg') 50% 50% no-repeat fixed;
-    background-position: center;
-    background-size: 100%;
-}
-
 .title {
     letter-spacing: 1px;
     line-height: 1;
-    font-family: Century;
+    font-family: "Proxima Nova", "Verdana", "Avenir Next";
     text-align: center;
     width: 600px;
     margin: 0 auto;
     font-size: 30px;
     font-weight: 600;
     color: #ffffff;
-    cursor: pointer;
     text-shadow: 1px 1px 0 rgb(126, 46, 126),
         1px -1px 0 rgb(126, 46, 126),
         -1px 1px 0 rgb(126, 46, 126),
@@ -105,7 +109,7 @@ body {
 }
 
 .title:hover {
-    color: rgb(126, 46, 126);
+    color: #6d49cf;
     text-shadow: 1px 1px 0 #ffffff,
         1px -1px 0 #ffffff,
         -1px 1px 0 #ffffff,
@@ -159,7 +163,7 @@ body {
 }
 
 table {
-    color: #1e083bbe;
+    color: #1e293b;
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     font-size: 12px;
     border-collapse: collapse;
@@ -168,7 +172,7 @@ table {
 
 th,
 td:first-child {
-    background: #e0b7d2;
+    background: #b181ff1f;
     padding: 7px 21px;
 }
 
@@ -176,12 +180,12 @@ th,
 td {
     height: 12px;
     border-width: 0 1px 1px 0;
-    border-color: #7e4a88;
+    border-color: #1e293b;
 }
 
 td {
     font-weight: 600;
-    background: #ffd9e8;
+    background: #ebdbfe;
 }
 
 th:first-child,
@@ -190,8 +194,14 @@ td:first-child {
 }
 
 .choices {
+    background: url(purple.svg) no-repeat right;
+    background-position-x: calc(100% - 8px);
+    background-position-y: calc(100% - 8px);
+    padding: 0 0 0 5px;
+    appearance: none;
+    outline: none;
+    border-color: #1e293b;
     color: #513457;
-    background: #f8f3fd7c;
     margin: 29px 0 0 0;
     font-weight: 500;
     width: 200px;
@@ -200,9 +210,27 @@ td:first-child {
     cursor: pointer;
 }
 
+.secondchoices {
+    background: url(purple2.svg) no-repeat right;
+    background-position-x: calc(100% - 8px);
+    background-position-y: calc(100% - 8px);
+    padding: 0 0 0 5px;
+    appearance: none;
+    outline: none;
+    border-color: #1e293b;
+    color: #513457;
+    margin: 29px 0 0 0;
+    font-weight: 500;
+    width: 200px;
+    height: 35px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
 option {
     color: #513457;
-    background: #ffd9e8;
+    background: #f5eafd;
     font-weight: 500;
 }
 

@@ -5,8 +5,8 @@ $(() => {
 });
 
 
-var flag = 1;
-var abc = '<?php echo $values; ?>';
+// var flag = 1;
+// var abc = '<?php echo $values; ?>';
 
 // function scrollAction() {
 //     if (flag == 1 && abc != 0) {
